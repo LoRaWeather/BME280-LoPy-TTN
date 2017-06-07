@@ -1,0 +1,15 @@
+BME280
+======
+The BME280 is used as sensor within this project.
+The BME280 is a temperature, humidity and pressure sensor in one.
+
+I didn't write the code for the sensor part.
+I used the code from adafruit.
+
+Github page below with code and an example:
+https://github.com/adafruit/Adafruit_Python_BME280
+
+Source
+------
+
+.. literalinclude:: ..\Program\lib\BME280.py

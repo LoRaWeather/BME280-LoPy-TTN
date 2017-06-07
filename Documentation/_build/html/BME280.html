@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BME280 &mdash; Weather station 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Weather station 1.0.0 documentation" href="index.html"/>
+        <link rel="up" title="Source" href="src.html"/>
+        <link rel="next" title="Device" href="device.html"/>
+        <link rel="prev" title="Main" href="main.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Weather station
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="src.html">Source</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">Main</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BME280</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#source">Source</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="device.html">Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loraconnection.html">LoraConnection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batteryManager.html">batteryManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lopyConstants.html">lopyConstants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensorConstants.html">sensorConstants</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Weather station</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="src.html">Source</a> &raquo;</li>
+        
+      <li>BME280</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/BME280.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bme280">
+<h1>BME280<a class="headerlink" href="#bme280" title="Permalink to this headline">¶</a></h1>
+<p>The BME280 is used as sensor within this project.
+The BME280 is a temperature, humidity and pressure sensor in one.</p>
+<p>I didn&#8217;t write the code for the sensor part.
+I used the code from adafruit.</p>
+<p>Github page below with code and an example:
+<a class="reference external" href="https://github.com/adafruit/Adafruit_Python_BME280">https://github.com/adafruit/Adafruit_Python_BME280</a></p>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;@package docstring</span>
+
+<span class="sd">asdfasdfsadf&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">micropython</span> <span class="k">import</span> <span class="n">const</span>
+<span class="kn">from</span> <span class="nn">Device</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sensorConstants</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">class</span> <span class="nc">BME280</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">BME280_OSAMPLE_1</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="n">BME280_I2CADDR</span><span class="p">,</span> <span class="n">i2c</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Check that mode is valid.</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">BME280_OSAMPLE_1</span><span class="p">,</span> <span class="n">BME280_OSAMPLE_2</span><span class="p">,</span> <span class="n">BME280_OSAMPLE_4</span><span class="p">,</span>
+                        <span class="n">BME280_OSAMPLE_8</span><span class="p">,</span> <span class="n">BME280_OSAMPLE_16</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;Unexpected mode value </span><span class="si">{0}</span><span class="s1">. Set mode to one of &#39;</span>
+                <span class="s1">&#39;BME280_ULTRALOWPOWER, BME280_STANDARD, BME280_HIGHRES, or &#39;</span>
+                <span class="s1">&#39;BME280_ULTRAHIGHRES&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="n">mode</span>
+        <span class="c1"># Create I2C device.</span>
+        <span class="k">if</span> <span class="n">i2c</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;An I2C object is required.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_device</span> <span class="o">=</span> <span class="n">Device</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
+        <span class="c1"># Load calibration values.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_calibration</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">write8</span><span class="p">(</span><span class="n">BME280_REGISTER_CONTROL</span><span class="p">,</span> <span class="mh">0x3F</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t_fine</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">_load_calibration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_T1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_T1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_T2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_T2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_T3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_T3</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P4</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P5</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P6</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P7</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P7</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P8</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P8</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_P9</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_P9</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_H1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_H1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_H2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS16LE</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_H2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_H3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_H3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_H6</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS8</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_H7</span><span class="p">)</span>
+
+        <span class="n">h4</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS8</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_H4</span><span class="p">)</span>
+        <span class="n">h4</span> <span class="o">=</span> <span class="p">(</span><span class="n">h4</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">20</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_H4</span> <span class="o">=</span> <span class="n">h4</span> <span class="o">|</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_H5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x0F</span><span class="p">)</span>
+
+        <span class="n">h5</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readS8</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_H6</span><span class="p">)</span>
+        <span class="n">h5</span> <span class="o">=</span> <span class="p">(</span><span class="n">h5</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">20</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dig_H5</span> <span class="o">=</span> <span class="n">h5</span> <span class="o">|</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_DIG_H5</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="mh">0x0F</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">read_raw_temp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reads the raw (uncompensated) temperature from the sensor.&quot;&quot;&quot;</span>
+        <span class="n">meas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">write8</span><span class="p">(</span><span class="n">BME280_REGISTER_CONTROL_HUM</span><span class="p">,</span> <span class="n">meas</span><span class="p">)</span>
+        <span class="n">meas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span> <span class="o">|</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">write8</span><span class="p">(</span><span class="n">BME280_REGISTER_CONTROL</span><span class="p">,</span> <span class="n">meas</span><span class="p">)</span>
+        <span class="n">sleep_time</span> <span class="o">=</span> <span class="mi">1250</span> <span class="o">+</span> <span class="mi">2300</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">)</span>
+        <span class="n">sleep_time</span> <span class="o">=</span> <span class="n">sleep_time</span> <span class="o">+</span> <span class="mi">2300</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">)</span> <span class="o">+</span> <span class="mi">575</span>
+        <span class="n">sleep_time</span> <span class="o">=</span> <span class="n">sleep_time</span> <span class="o">+</span> <span class="mi">2300</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">)</span> <span class="o">+</span> <span class="mi">575</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_us</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>  <span class="c1"># Wait the required time</span>
+        <span class="n">msb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_TEMP_DATA</span><span class="p">)</span>
+        <span class="n">lsb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_TEMP_DATA</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">xlsb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_TEMP_DATA</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="p">((</span><span class="n">msb</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">lsb</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">xlsb</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span>
+        <span class="k">return</span> <span class="n">raw</span>
+
+    <span class="k">def</span> <span class="nf">read_raw_pressure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reads the raw (uncompensated) pressure level from the sensor.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Assumes that the temperature has already been read &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;i.e. that enough delay has been provided&quot;&quot;&quot;</span>
+        <span class="n">msb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_PRESSURE_DATA</span><span class="p">)</span>
+        <span class="n">lsb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_PRESSURE_DATA</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">xlsb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_PRESSURE_DATA</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="p">((</span><span class="n">msb</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">lsb</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">xlsb</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span>
+        <span class="k">return</span> <span class="n">raw</span>
+
+    <span class="k">def</span> <span class="nf">read_raw_humidity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Assumes that the temperature has already been read &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;i.e. that enough delay has been provided&quot;&quot;&quot;</span>
+        <span class="n">msb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_HUMIDITY_DATA</span><span class="p">)</span>
+        <span class="n">lsb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="o">.</span><span class="n">readU8</span><span class="p">(</span><span class="n">BME280_REGISTER_HUMIDITY_DATA</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="p">(</span><span class="n">msb</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">lsb</span>
+        <span class="k">return</span> <span class="n">raw</span>
+
+    <span class="k">def</span> <span class="nf">read_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the compensated temperature in 0.01 of a degree celsius.&quot;&quot;&quot;</span>
+        <span class="n">adc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_raw_temp</span><span class="p">()</span>
+        <span class="n">var1</span> <span class="o">=</span> <span class="p">((</span><span class="n">adc</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dig_T1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dig_T2</span> <span class="o">&gt;&gt;</span> <span class="mi">11</span><span class="p">)</span>
+        <span class="n">var2</span> <span class="o">=</span> <span class="p">((</span>
+            <span class="p">(((</span><span class="n">adc</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_T1</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">adc</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_T1</span><span class="p">))</span> <span class="o">&gt;&gt;</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dig_T3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">14</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t_fine</span> <span class="o">=</span> <span class="n">var1</span> <span class="o">+</span> <span class="n">var2</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t_fine</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">128</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span>
+
+    <span class="k">def</span> <span class="nf">read_pressure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the compensated pressure in Pascals.&quot;&quot;&quot;</span>
+        <span class="n">adc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_raw_pressure</span><span class="p">()</span>
+        <span class="n">var1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_fine</span> <span class="o">-</span> <span class="mi">128000</span>
+        <span class="n">var2</span> <span class="o">=</span> <span class="n">var1</span> <span class="o">*</span> <span class="n">var1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_P6</span>
+        <span class="n">var2</span> <span class="o">=</span> <span class="n">var2</span> <span class="o">+</span> <span class="p">((</span><span class="n">var1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_P5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">17</span><span class="p">)</span>
+        <span class="n">var2</span> <span class="o">=</span> <span class="n">var2</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dig_P4</span> <span class="o">&lt;&lt;</span> <span class="mi">35</span><span class="p">)</span>
+        <span class="n">var1</span> <span class="o">=</span> <span class="p">(((</span><span class="n">var1</span> <span class="o">*</span> <span class="n">var1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_P3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span>
+                <span class="p">((</span><span class="n">var1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_P2</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">12</span><span class="p">))</span>
+        <span class="n">var1</span> <span class="o">=</span> <span class="p">(((</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">47</span><span class="p">)</span> <span class="o">+</span> <span class="n">var1</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_P1</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">33</span>
+        <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="mi">1048576</span> <span class="o">-</span> <span class="n">adc</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="p">(((</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="mi">31</span><span class="p">)</span> <span class="o">-</span> <span class="n">var2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3125</span><span class="p">)</span> <span class="o">//</span> <span class="n">var1</span>
+        <span class="n">var1</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dig_P9</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">&gt;&gt;</span> <span class="mi">13</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">&gt;&gt;</span> <span class="mi">13</span><span class="p">))</span> <span class="o">&gt;&gt;</span> <span class="mi">25</span>
+        <span class="n">var2</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dig_P8</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">19</span>
+        <span class="k">return</span> <span class="p">((</span><span class="n">p</span> <span class="o">+</span> <span class="n">var1</span> <span class="o">+</span> <span class="n">var2</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dig_P7</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">read_humidity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">adc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_raw_humidity</span><span class="p">()</span>
+        <span class="c1"># print &#39;Raw humidity = {0:d}&#39;.format (adc)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_fine</span> <span class="o">-</span> <span class="mi">76800</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="p">(((((</span><span class="n">adc</span> <span class="o">&lt;&lt;</span> <span class="mi">14</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dig_H4</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dig_H5</span> <span class="o">*</span> <span class="n">h</span><span class="p">))</span> <span class="o">+</span>
+             <span class="mi">16384</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">*</span> <span class="p">(((((((</span><span class="n">h</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_H6</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="p">(((</span><span class="n">h</span> <span class="o">*</span>
+                              <span class="bp">self</span><span class="o">.</span><span class="n">dig_H3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">11</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32768</span><span class="p">))</span> <span class="o">&gt;&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2097152</span><span class="p">)</span> <span class="o">*</span>
+                              <span class="bp">self</span><span class="o">.</span><span class="n">dig_H2</span> <span class="o">+</span> <span class="mi">8192</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">14</span><span class="p">))</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">h</span> <span class="o">-</span> <span class="p">(((((</span><span class="n">h</span> <span class="o">&gt;&gt;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span> <span class="o">&gt;&gt;</span> <span class="mi">15</span><span class="p">))</span> <span class="o">&gt;&gt;</span> <span class="mi">7</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dig_H1</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">h</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mi">419430400</span> <span class="k">if</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="mi">419430400</span> <span class="k">else</span> <span class="n">h</span>
+        <span class="k">return</span> <span class="n">h</span> <span class="o">&gt;&gt;</span> <span class="mi">12</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;Return the temperature in degrees.&quot;</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_temperature</span><span class="p">()</span>
+        <span class="n">ti</span> <span class="o">=</span> <span class="n">t</span> <span class="o">//</span> <span class="mi">100</span>
+        <span class="n">td</span> <span class="o">=</span> <span class="n">t</span> <span class="o">-</span> <span class="n">ti</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.</span><span class="si">{:02d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ti</span><span class="p">,</span> <span class="n">td</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pressure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;Return the temperature in hPa.&quot;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_pressure</span><span class="p">()</span> <span class="o">//</span> <span class="mi">256</span>
+        <span class="n">pi</span> <span class="o">=</span> <span class="n">p</span> <span class="o">//</span> <span class="mi">100</span>
+        <span class="n">pd</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="n">pi</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.</span><span class="si">{:1d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">pd</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">humidity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;Return the humidity in percent.&quot;</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_humidity</span><span class="p">()</span>
+        <span class="n">hi</span> <span class="o">=</span> <span class="n">h</span> <span class="o">//</span> <span class="mi">1024</span>
+        <span class="n">hd</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">//</span> <span class="mi">1024</span> <span class="o">-</span> <span class="n">hi</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="n">hd</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
+	        <span class="n">hi</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="device.html" class="btn btn-neutral float-right" title="Device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="main.html" class="btn btn-neutral" title="Main" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Maurice Markvoort.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
