@@ -1,5 +1,5 @@
 # BME280-LoPy-TTN
-This repository is for the program on the LoPy. The LoPy will read data from the BME280 sensor and send it to The Things Network over LoRa. The repository exists of two folders, Program and Documentation. The Program folder contains the whole program that is on the LoPy.
+This repository is for the program on the LoPy. The LoPy will read data from the BME280 sensor and send it to The Things Network over LoRa. The repository exists of two folders, Program and Documentation. The Program folder contains the whole program that is on the LoPy. See the loraweather organization page on GitHub for more info, you can find the page [here](https://github.com/LoRaWeather).
 
 
 ## Contents
